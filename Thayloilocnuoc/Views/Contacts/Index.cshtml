@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutDefault.cshtml";
+}
+@using (Html.BeginForm(FormMethod.Post))
+{
+<div id="Contents">
+    <div class="Root">
+        <a href="/" title="Trang chủ" rel="nofollow"><span class="icon_Homes"></span>Trang chủ</a> / Liên hệ
+    </div>
+    <div class="Clear"></div>
+    <div id="Orders">
+        <h2>THÔNG TIN LIÊN HỆ</h2>
+        <div class="rOrder">
+            <div class="Left"><span>Họ và Tên :</span></div>
+            <div class="Right"><input type="text" name="txtName" class="txtName" id="txtName" required="required" autofocus="autofocus" /></div>
+        </div>
+        <div class="rOrder">
+            <div class="Left"><span>Địa chỉ :</span></div>
+            <div class="Right"><input type="text" name="txtAddress" class="txtAddress" id="txtAddress" required="required" autofocus="autofocus" /></div>
+        </div>
+        
+        <div class="rOrder">
+            <div class="Left"><span>Điện thoại :</span></div>
+            <div class="Right"><input type="text" name="txtMobile" class="txtMobile" id="txtMobile" required="required" autofocus="autofocus" /></div>
+        </div>
+        <div class="rOrder">
+            <div class="Left"><span>Email :</span></div>
+            <div class="Right"><input type="email" name="txtEmail" class="txtEmail" id="txtEmail" required="required" autofocus="autofocus" /></div>
+        </div>
+        <div class="rOrder">
+            <div class="Left"><span>Nội dung:</span></div>
+            <div class="Right"><input type="text" name="txtDescription" class="txtDescription" id="txtDescription" required="required" autofocus="autofocus" /></div>
+        </div>  
+        <div class="rOrders">
+            <p class="Ghichu">Ghi chú(*) : </p>
+            <p class="Ghichu1"> - Bạn cần điền đầy đủ và chính xác các thông tin ! </p>
+            <p class="Ghichu1"> - Bạn vui lòng check mail để xác nhận tin bạn gửi đã được chúng tôi</p>
+            <p class="Ghichu1"> - Nếu bạn gặp khó khăn bạn vui lòng liên hệ hotline !</p>
+             <p class="Date">Hà Nội, ngày @DateTime.Now.Day tháng @DateTime.Now.Month năm @DateTime.Now.Year</p>
+            
+        </div>
+        <div class="Func">
+     <button type="submit" id="btnOrder" name="btnOrd" style="margin:15px auto; display:block; float:none">Gửi liên hệ</button>
+        </div>
+        <div class="Clear"></div>
+    </div>
+
+</div>
+@Html.Raw(ViewBag.status)
+}

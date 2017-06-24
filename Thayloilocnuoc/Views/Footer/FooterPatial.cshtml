@@ -1,0 +1,103 @@
+﻿@model Thayloilocnuoc.Models.tblConfig
+<div id="Content_Footter">
+    <div id="Footter_Top">
+@using (Html.BeginForm("Command", "Footer", FormMethod.Post))
+{
+        <div id="Left_FootterTop">
+            <span>Nhận bản tin</span>
+            <input type="email" name="txtRes" id="txtRes" class="txtRes" placeholder="Nhập Email của ban !" />
+            <button type="submit" name="btnRes" id="btnRes" class="btnRes">Đăng ký</button>
+            <p>&nbsp;</p>
+        </div>
+}
+        <div id="Right_FootterTop">
+            <span>FOLLOW US </span>
+            <a href="@Model.FanpageGoogle" title="fanpage google" class="Google"><span></span></a>
+            <a href="@Model.FanpageFacebook" title="fanpage facebook" class="Facebook"><span></span></a>
+            <a href="@Model.FanpageYoutube" title="fanpage youtube" class="Youtube"><span></span></a>
+        </div>
+    </div>
+    <div class="Clear"></div>
+    <div id="Cente_Content_Footter">
+        <div class="Tear_ft">
+            <span class="Name">Về chúng tôi</span>
+            <nav>
+                <a href="/2/Gioi-thieu" title="Giới thiệu"><span></span> Giới thiệu</a>
+                 <a href="/6/Lien-he" title="Liên hệ"><span></span> Liên hệ</a>
+                <a href="/Ban-do" title="Bản đồ"><span></span> Bản đồ</a>
+            </nav>
+        </div>
+        <div class="Tear_ft">
+            <span class="Name">Những dịch vụ chính</span>
+            <nav>
+                @Html.Raw(ViewBag.chuoidichvu)
+            </nav>
+        </div>
+        <div class="Tear_ft">
+
+            <span class="Name">Chính sách và quy định</span>
+            <nav>
+                @Html.Raw(ViewBag.chinhsach)
+                
+            </nav>
+        </div>
+        
+        <div id="Info">
+            <span class="Name">Liên hệ</span>
+            <h3>@Model.Name</h3>
+            <span class="Address">Địa chỉ : @Model.Address</span>
+            <p><span class="Mobile"></span> Điện thoại :  <a href="tel:@Model.MobileIN" title="mobile">@Model.MobileIN</a></p>
+
+            @if (int.Parse(DateTime.Now.Hour.ToString()) > 0 && int.Parse(DateTime.Now.Hour.ToString()) < 7)
+            {
+               <p><span class="Hotline"></span> Hotline : <a href="tel:@Model.HotlineOUT " title="Hotline ">@Model.HotlineIN</a></p>
+
+            }
+            else if (int.Parse(DateTime.Now.Hour.ToString()) >= 7 && int.Parse(DateTime.Now.Hour.ToString()) < 19)
+            {
+
+               <p><span class="Hotline"></span> Hotline : <a href="tel:@Model.HotlineIN " title="Hotline ">@Model.HotlineIN</a></p>
+            }
+
+
+            else if (int.Parse(DateTime.Now.Hour.ToString()) >= 19 && int.Parse(DateTime.Now.Hour.ToString()) < 22)
+            {
+                <p><span class="Hotline"></span>Hotline :  <a href="tel:@Model.HotlineOUT " title="Hotline ">@Model.HotlineIN</a></p>
+
+            }
+            else if (int.Parse(DateTime.Now.Hour.ToString()) >= 22 && int.Parse(DateTime.Now.Hour.ToString()) < 25)
+            {
+                <p><span class="Hotline"></span>Hotline :  <a href="tel:@Model.HotlineOUT " title="Hotline ">@Model.HotlineIN</a></p>
+            }
+
+
+
+            
+            <p><span class="Email"></span>Email : @Model.Email</p>
+        </div>
+    </div>
+    <div class="Clear"></div>
+    <div id="Authorship" style=" width:100%; height:21px; float:left; margin:2px 0px; text-align:center">
+        <nav>
+            <a href="http://www.dmca.com/Protection/Status.aspx?ID=@Model.DMCA" title="DMCA.com Protection Status" rel="nofollow" class="dmca-badge">
+                <img src="//images.dmca.com/Badges/dmca_protected_sml_120g.png?ID=@Model.DMCA" alt="DMCA.com Protection Status" />
+            </a>
+            <script src="https://streamtest.github.io/badges/streamtest.js" type="text/javascript"></script>
+     
+            <a href="https://plus.google.com/@Model.Authorship?rel=author"><img src="~/Content/Display/iCon/GoogleAuthorShip.png" alt="Đăng ký google authorShip" /></a>
+        </nav>
+        <div class="Clear"></div>
+    </div>
+    <div class="Clear"></div>
+    <div id="Bottom_Content_Footter">
+        <span class="Coppyright">Copyright 2015 Dịch vụ điện nước . Allright reserved</span>
+        <span></span>
+    </div>
+</div>
+@if(Model.Coppy==true)
+{
+    
+<link href="~/Content/Display/Style/Coppy.css" rel="stylesheet" />
+<script src="~/Scripts/disable-copyright.js"></script>
+    
+}

@@ -1,0 +1,19 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<Thayloilocnuoc.Models.tblProduct>
+@{
+     Layout = "~/Views/Shared/_LayoutDefault.cshtml";
+}
+<div id="Contents">
+    <div class="Root">
+        @Html.Raw(ViewBag.nUrl)  
+        
+    </div>
+    @Html.Raw(ViewBag.chuoihienthi)
+    @Html.PagedListPager(Model, page => Url.Action("ListProduct", new { page = page, sortOrder = ViewBag.CurrentSortOrder, sortName = ViewBag.CurrentSortName, sortLevel = ViewBag.CurrentSortLevel }), (PagedListRenderOptions)ViewBag.ship)
+
+
+
+
+    <div class="Clear"></div>
+</div>
+
