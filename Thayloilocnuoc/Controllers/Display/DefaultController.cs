@@ -13,7 +13,7 @@ namespace Thayloilocnuoc.Controllers.Display
         ThayloilocnuocContext db = new ThayloilocnuocContext();
         //
         // GET: /Default/
-        [OutputCache (Duration=2400)]
+        [OutputCache (Duration=2200)]
         public ActionResult Index()
         {
             tblConfig tblconfig = db.tblConfigs.First();
