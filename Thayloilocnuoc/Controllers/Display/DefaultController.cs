@@ -15,7 +15,7 @@ namespace Thayloilocnuoc.Controllers.Display
         // GET: /Default/
         [OutputCache (Duration=2200)]
         public ActionResult Index()
-        {
+        {//Chào các bạn
             tblConfig tblconfig = db.tblConfigs.First();
             ViewBag.Title = "<title>" + tblconfig.Title + "</title>";
             ViewBag.Description = "<meta name=\"description\" content=\"" + tblconfig.Description + "\"/>";
