@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+     <link href="~/Content/Admin/Css/Admin.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Content/ckeditor/ckeditor.js"></script>
+    <link href="~/Content/Admin/Css/Admin_Add.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Content/ckfinder/ckfinder.js"></script>
+    <link href="~/Content/Admin/Css/jquery-ui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-ui-1.8.20.js"></script>
+     <script src="~/Scripts/jquery.easy-confirm-dialog.js"></script>
+    <script src="~/Scripts/jquery.colorbox.js"></script>
+     <link href="~/Content/Admin/Css/colorbox.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/jquery.ui.dialog.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/jquery.ui.all.css" rel="stylesheet" />
+
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+   <div id="Main">
+        <div id="Top_Main">
+            <div id="nvar_Top">
+                <a href="/" title="" target="_blank">
+                    <img src="/Content/Admin/Icon/icon_Homes.png" alt="Homes" />Control Panel</a>
+            </div>
+            <div id="nvar_Bottom">
+                <div id="nvar_Bottom_left">
+                    <div id="nvar_Bottom_left_1">
+                       
+                                Welcome : @Request.Cookies["Username"].Values["FullName"]  - [@Request.Cookies["Username"].Values["UserName"]]
+                         
+                    </div>
+                    <div id="nvar_Bottom_left_2">
+                        Select Language:
+                        <select>
+                            <option value="0" selected="selected">Viet Nam</option>
+                            <option value="1">EngLish</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div id="ul_Right">
+                    <a href="/../../Login/Logout">
+                        <img src="/Content/Admin/Icon/huong-dan.png" alt="Hướng dẫn" />LogOut</a>
+                    <a href="">
+                        <img src="/Content/Admin/Icon/huong-dan.png" alt="Hướng dẫn" />Note</a>
+                </div>
+            </div>
+        </div>
+        <div class="LinkRoot">
+            <ul>
+                <li><span class="/Content/Admin/Icon_Homes"></span><a href="" title="">Homes</a></li>
+                <li><a href="" title="">&raquo; Product</a></li>
+            </ul>
+        </div>
+        <div id="/Content">
+            <div id="Left_Content">
+                <div class="Tear_Menu">
+                    <div class="Nvar_menu">
+                        <img src="/Content/Admin/Icon/program-small-icons.png" alt="Menu" />Manager
+                    </div>
+                    <div class="List_menu">
+                        <ul>
+                            <li><a href="/../../Config/Index" title="">Config </a></li>
+                             <li><a href="/../../Maps/Index" title="">Maps</a></li>
+                            <li><a href="/../../SendEmail/Index" title="">Email</a></li>
+                            <li><a href="/../../Url/Index" title="">Url</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="Tear_Menu">
+                    <div class="Nvar_menu">
+                        <img src="/Content/Admin/Icon/program-small-icons.png" alt="Menu" />Lõi lọc
+                    </div>
+                    <div class="List_menu">
+                        <ul>
+                            <li><a href="/../../Loiloc/Index" title="">Lõi lọc</a></li>
+                            <li><a href="/../../Khachhang/Index" title="">Khách hàng đăng ký</a></li>
+ 
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="Tear_Menu">
+                    <div class="Nvar_menu">
+                        <img src="/Content/Admin/Icon/program-small-icons.png" alt="Menu" />Product
+                    </div>
+                    <div class="List_menu">
+                        <ul>
+                            <li><a href="/../../Manufactures/Index" title="">Manufactures</a></li>
+                            <li><a href="/../../GroupProduct/Index" title="">Group Product</a></li>
+                            <li><a href="/../../Productad/Index" title="">List Product</a></li>
+                            <li><a href="" title="">Order</a></li>
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="Tear_Menu">
+                    <div class="Nvar_menu">
+                        <img src="/Content/Admin/Icon/program-small-icons.png" alt="Menu" />Dịa chỉ
+                    </div>
+                    <div class="List_menu">
+                        <ul>
+                            <li><a href="/../../groupaddress/Index" title="">Tỉnh thành</a></li>
+                            <li><a href="/../../address/Index" title="">Danh sách quận huyện</a></li>
+
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="Tear_Menu">
+                    <div class="Nvar_menu">
+                        <img src="/Content/Admin/Icon/program-small-icons.png" alt="Menu" />News
+                    </div>
+                    <div class="List_menu">
+                        <ul>
+                            <li><a href="/../../GroupNews/Index" title="">Group News</a></li>
+                            <li><a href="/../../Newsad/Index" title="">List News</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="Tear_Menu">
+                    <div class="Nvar_menu">
+                        <img src="/Content/Admin/Icon/program-small-icons.png" alt="Menu" />Agency
+                    </div>
+                    <div class="List_menu">
+                        <ul>
+                            <li><a href="/../../GroupAgency/Index" title="">Group Agency</a></li>
+                            <li><a href="/../../Agency/Index" title="">List Agency</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="Tear_Menu">
+                    <div class="Nvar_menu">
+                        <img src="/Content/Admin/Icon/program-small-icons.png" alt="Menu" />Images
+                    </div>
+                    <div class="List_menu">
+                        <ul>
+                            <li><a href="/../../GroupImage/Index" title="">Group Image</a></li>
+                            <li><a href="/../../Image/Index" title="">List Image</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="Tear_Menu">
+                    <div class="Nvar_menu">
+                        <img src="/Content/Admin/Icon/program-small-icons.png" alt="Menu" />Video
+                    </div>
+                    <div class="List_menu">
+                        <ul>
+                            <li><a href="/../../Video/Index" title="">Video</a></li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="Tear_Menu">
+                    <div class="Nvar_menu">
+                        <img src="/Content/Admin/Icon/program-small-icons.png" alt="Menu" />Account
+                    </div>
+                    <div class="List_menu">
+                        <ul>
+                            <li><a href="/../../Users/Index" title="">List Account</a></li>
+                            <li><a href="/../../Module/ModuleIndex" title="">Righs</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="Tear_Menu">
+                    <div class="Nvar_menu">
+                        <img src="/Content/Admin/Icon/program-small-icons.png" alt="Menu" />Support
+                    </div>
+                    <div class="List_menu">
+                        <ul> 
+                            <li><a href="/../../Support/Index" title="">Support</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="Right_Content">
+                 
+                
+                    @RenderBody()
+                
+                     @Scripts.Render("~/bundles/jqueryui")
+                
+            </div>
+        </div>
+        <div class="Clear"></div>
+        <div id="Footter">
+        </div>
+    </div>
+</body>
+</html>

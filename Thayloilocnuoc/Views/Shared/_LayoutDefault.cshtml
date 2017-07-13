@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html amp>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @Html.Raw(ViewBag.Title)
+    @Html.Raw(ViewBag.dcTitle)
+    @Html.Raw(ViewBag.Description)
+    @Html.Raw(ViewBag.dcDescription)
+    @Html.Raw(ViewBag.Keyword)
+    @Html.Raw(ViewBag.canonical) 
+    @Html.Raw(ViewBag.Meta)
+    @Html.Raw(ViewBag.favicon)
+    @Html.Raw(ViewBag.refresh)
+    @Html.Raw(ViewBag.schame)
+   
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="vi" />
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+     @Styles.Render("~/Content/Display/Css/css")
+     <script src="~/Scripts/jquery-2.1.4.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link href="~/Content/Display/Css/font-awesome.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jquery")
+     <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-27277318-24', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '1671852036431510',
+                xfbml: true,
+                version: 'v2.5'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
+</head>
+<body>
+    <header>
+        @{Html.RenderAction("BannerPatial", "Header");}
+        <div class="line"></div>
+    </header>
+    <section>
+        @RenderBody()
+  
+
+    </section>
+  @{Html.RenderAction("FooterPartial", "Footer");}
+    <div id="fb-root"></div>
+    <script type="text/javascript">
+
+					function getLocation(id)
+					{   $(".listLocation li a").removeClass("set");
+						 $(".contentLocation").removeClass("showLocation");
+						$("#"+id).addClass("showLocation");
+						$("."+id).addClass("set");
+ 					}
+
+
+
+    </script>
+    <script>
+(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5&appId=1671852036431510";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>
