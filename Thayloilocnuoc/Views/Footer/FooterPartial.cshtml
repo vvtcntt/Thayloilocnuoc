@@ -27,8 +27,14 @@
     <span class="time1">THỜI GIAN LÀM VIỆC : <span>7H - 22H</span></span>
     <span class="Date1">Làm việc cả ngày thứ 7, Chủ nhật</span>
 </div></div>
-            <div class="support_2 cl1"><p><img src="~/Content/Display/iCon/support.png" alt="icon hotline" />Hà Nội : <span> @Model.HotlineIN </span></p></div>
-            <div class="support_2"><p><img src="~/Content/Display/iCon/support.png" alt="icon hotline" />TP.HCM :<span> @Model.HotlineOUT</span> </p></div>
+            <div class="support_2 cl1">
+                <p><img src="~/Content/Display/iCon/support.png" alt="icon hotline" />Hà Nội</p>
+                <a href="tel:@Model.HotlineIN" title="Điện thoại hỗ trợ"> @Model.HotlineIN </a>
+            </div>
+            <div class="support_2">
+                <p><img src="~/Content/Display/iCon/support.png" alt="icon hotline" />Miền Nam</p>
+                <a href="tel:@Model.HotlineOUT" title="Điện thoại hỗ trợ"> @Model.HotlineOUT </a>
+             </div>
             <div class="support_3">
                 <a href="/Lien-he" title="Liên hệ" rel="nofollow">Liên hệ ngay</a>
             </div>
@@ -203,10 +209,13 @@
             }
         </div>
     </div>
-    
-    @Html.Raw(Model.Code)
-     
- 
+    @if (Request.Browser.IsMobileDevice == false)
+    {
+        @Html.Raw(Model.Code)
+
+    }
+    @Html.Raw(ViewBag.Chuoiimg)
+
     <div id="linkOut" style="width: 100%; height: auto; float: left; margin: 0px; color: #333940; font-size:12px"><a href="http://binhnonglanh.top" title="bình nóng lạnh tốt nhất">Bình nóng lạnh tốt nhất</a> với <a href="http://binhnonglanh.top/binh-nong-lanh-ariston-lp" title="Bình nóng lạnh Ariston">Bình nóng lạnh Ariston</a> hay sản phẩm <a href="http://binhnonglanh.top/binh-nong-lanh-ferroli-lp" title="Bình nóng lạnh Ferroli">Bình nóng lạnh Ferroli</a></div>
 </footer>
 

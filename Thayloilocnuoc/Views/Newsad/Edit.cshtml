@@ -23,7 +23,7 @@
     <div id="InsertPoduct">
     <div class="Nvar_Content_Detail">
         <div class="Left_Nvar">
-            <img src="/Content/Admin/Icon/folder.png" alt="Danh mục sản phẩm" />Add News
+            <img src="/Content/Admin/Icon/folder.png" alt="Danh mục sản phẩm" />Edit News
         </div>
         <div class="Right_Nvar">
                 <div id="msg" class="msg">
@@ -48,7 +48,8 @@
             </div>
             <div class="Right_tr1">
                 @Html.TextBoxFor(p=>p.Name, null, new { @class = "Leght_2" }) <span class="Aler_ttxtName" style="color:#F00"></span>
-
+                <input type="checkbox" name="URL" id="URL" /> : Rename URL
+                @Html.TextBoxFor(p => p.Tag, null, new { @Name = "NameURL", @style = " opacity:0" })
             </div>
         </div>
         <div class="tr_1">

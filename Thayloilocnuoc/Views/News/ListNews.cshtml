@@ -27,7 +27,7 @@
                             </div>
                         }
                         <div class="Clear"></div>
-                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page, sortOrder = ViewBag.CurrentSortOrder, sortName = ViewBag.CurrentSortName, sortLevel = ViewBag.CurrentSortLevel }), (PagedListRenderOptions)ViewBag.ship)
+                        @Html.PagedListPager(Model, page => Url.Action("ListNews", new { page = page, sortOrder = ViewBag.CurrentSortOrder, sortName = ViewBag.CurrentSortName, sortLevel = ViewBag.CurrentSortLevel }), (PagedListRenderOptions)ViewBag.ship)
 
 
                     </div>

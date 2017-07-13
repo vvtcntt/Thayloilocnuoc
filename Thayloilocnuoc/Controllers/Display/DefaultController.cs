@@ -25,6 +25,22 @@ namespace Thayloilocnuoc.Controllers.Display
             chuoi+="<p>HOTLINE: <span>"+tblconfig.MobileIN+" </span> (Miền Bắc) |<span>"+tblconfig.MobileOUT+" </span>(Miền Nam)</p>";
             ViewBag.Hotline = chuoi;
             ViewBag.favicon=" <link href=\""+tblconfig.Favicon+"\" rel=\"icon\" type=\"image/x-icon\" />";
+
+            string meta = "";
+            ViewBag.canonical = "<link rel=\"canonical\" href=\"http://Thayloilocnuoc.com\" />";
+
+            meta += "<meta itemprop=\"name\" content=\"" + tblconfig.Name + "\" />";
+            meta += "<meta itemprop=\"url\" content=\"" + Request.Url.ToString() + "\" />";
+            meta += "<meta itemprop=\"description\" content=\"" + tblconfig.Description + "\" />";
+            meta += "<meta itemprop=\"image\" content=\"http://Thayloilocnuoc.com" + tblconfig.ImageLinkLogo + "\" />";
+            meta += "<meta property=\"og:title\" content=\"" + tblconfig.Title + "\" />";
+            meta += "<meta property=\"og:type\" content=\"product\" />";
+            meta += "<meta property=\"og:url\" content=\"" + Request.Url.ToString() + "\" />";
+            meta += "<meta property=\"og:image\" content=\"http://Thayloilocnuoc.com" + tblconfig.ImageLinkLogo + "\" />";
+            meta += "<meta property=\"og:site_name\" content=\"http://Thayloilocnuoc.com\" />";
+            meta += "<meta property=\"og:description\" content=\"" + tblconfig.Description + "\" />";
+            meta += "<meta property=\"fb:admins\" content=\"\" />";
+            ViewBag.Meta = meta;
             ViewBag.content = tblconfig.Footer;
             if (Session["Register"]!="")
             {
@@ -32,6 +48,7 @@ namespace Thayloilocnuoc.Controllers.Display
                
             }
             Session["Register"] = "";
+            ViewBag.h1 = tblconfig.Title;
             return View();
         }
         public PartialViewResult ProductNewsHomes()
@@ -60,5 +77,9 @@ namespace Thayloilocnuoc.Controllers.Display
             ViewBag.chuoinew = chuoinew;
                 return PartialView();
         }
-	}
+        public PartialViewResult partialdefault()
+        {
+            return PartialView(db.tblConfigs.First());
+        }
+    }
 }

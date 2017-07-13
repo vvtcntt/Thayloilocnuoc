@@ -30,6 +30,23 @@ namespace Thayloilocnuoc.Controllers.Display.Section.Agency
             ViewBag.site_nameog = "<meta property=\"og:site_name\" content=\"" + tblagency.Description + "\"/> ";
             ViewBag.urlog = "<meta property=\"og:url\" content=\"" + Request.Url.ToString() + "\"/> ";
             ViewBag.descriptionog = "<meta property=\"og:description\" content=\"" + tblagency.Description + "\" />";
+            string meta = "";
+            ViewBag.canonical = "<link rel=\"canonical\" href=\"http://Thayloilocnuoc.com/5/"+tblagency.Tag+"\" />";
+
+            meta += "<meta itemprop=\"name\" content=\"" + tblagency.Name + "\" />";
+            meta += "<meta itemprop=\"url\" content=\"" + Request.Url.ToString() + "\" />";
+            meta += "<meta itemprop=\"description\" content=\"" + tblagency.Description + "\" />";
+            meta += "<meta itemprop=\"image\" content=\"http://Thayloilocnuoc.com" + tblagency.Images + "\" />";
+            meta += "<meta property=\"og:title\" content=\"" + tblagency.Name + "\" />";
+            meta += "<meta property=\"og:type\" content=\"product\" />";
+            meta += "<meta property=\"og:url\" content=\"" + Request.Url.ToString() + "\" />";
+            meta += "<meta property=\"og:image\" content=\"http://Thayloilocnuoc.com" + tblagency.Images + "\" />";
+            meta += "<meta property=\"og:site_name\" content=\"http://Thayloilocnuoc.com\" />";
+            meta += "<meta property=\"og:description\" content=\"" + tblagency.Description + "\" />";
+            meta += "<meta property=\"fb:admins\" content=\"\" />";
+            ViewBag.Meta = meta;
+
+
             int iduser = int.Parse(tblagency.idUser.ToString());
             ViewBag.User = db.tblUsers.First(p => p.id == iduser).UserName;
             int idcate = int.Parse(tblagency.idMenu.ToString());

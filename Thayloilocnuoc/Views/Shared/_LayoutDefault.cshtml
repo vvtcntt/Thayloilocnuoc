@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html amp>
 <head>
     <meta name="viewport" content="width=device-width" />
     @Html.Raw(ViewBag.Title)
@@ -11,8 +11,13 @@
     @Html.Raw(ViewBag.Meta)
     @Html.Raw(ViewBag.favicon)
     @Html.Raw(ViewBag.refresh)
+    @Html.Raw(ViewBag.schame)
+   
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="content-language" content="vi" />
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
      @Styles.Render("~/Content/Display/Css/css")
      <script src="~/Scripts/jquery-2.1.4.js"></script>
@@ -52,6 +57,8 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
+
+
 </head>
 <body>
     <header>

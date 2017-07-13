@@ -6,7 +6,7 @@
 @Html.Raw(ViewBag.Register)
 <div id="Header">
     <div id="ContentHeader">
-        <h1>Dịch vụ thay lõi máy lọc nước tại nhà uy tín nhất Hà Nội</h1>
+        <h2>Dịch vụ thay lõi máy lọc nước tại nhà uy tín nhất Hà Nội</h2>
         <div class="Notes">
             <div class="content_Notes">
                 <span>CHÍNH HÃNG - NHANH CHÓNG - GIÁ RẺ CHO MỌI NHÀ !</span>
@@ -58,6 +58,7 @@
 </div>
 <div class="Clear"></div>
 <div id="Info" >
+
     <div id="Info_Content">
         <h2>DỊCH VỤ THAY LÕI LỌC NƯỚC TẠI NHÀ</h2>
         @Html.Raw(ViewBag.Hotline)
@@ -68,7 +69,8 @@
     </div>
     <div class="Clear"></div>
 </div>
- 
+ <h1 class="h11">@ViewBag.h1</h1>
+
 @{Html.RenderAction("PartialManufactures", "ManufacturesDisplay");}
 <div class="Tear_One">
     <div class="Why">

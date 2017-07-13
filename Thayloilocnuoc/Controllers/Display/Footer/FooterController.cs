@@ -21,7 +21,7 @@ namespace Thayloilocnuoc.Controllers.Display.Footer
         //[OutputCache(Duration = 2400)]
 
         public PartialViewResult FooterPartial()
-        {
+        { var tblconfig = db.tblConfigs.First();
             var listSupport = db.tblSupports.Where(p => p.Active == true).OrderBy(p => p.Ord).ToList();
             string chuoi = "";
             for (int i = 0; i < listSupport.Count;i++ )
@@ -86,22 +86,32 @@ namespace Thayloilocnuoc.Controllers.Display.Footer
                 chuoiurrl += "<a href=\"/Websites/" + listurl[i].id + "\" title=\"" + listurl[i].Name + "\" rel=\"nofollow\">" + listurl[i].Name + "</a>" + ", ";
             }
             ViewBag.url = chuoiurrl;
-            
-            var Imagesadw = db.tblImages.Where(p => p.Active == true && p.idMenu == 3).OrderByDescending(p => p.Ord).Take(1).ToList();
-            if (Imagesadw.Count > 0)
-            {
+            StringBuilder Chuoiimg = new StringBuilder();
+            //var Imagesadw = db.tblImages.Where(p => p.Active == true && p.idMenu == 3).OrderByDescending(p => p.Ord).Take(1).ToList();
+            //if (Imagesadw.Count > 0)
+            //{
+
+              
                 if(Request.Browser.IsMobileDevice)
                 {
-                    ViewBag.Chuoiimg = "<a href=\"" + Imagesadw[0].Url + "\" title=\"" + Imagesadw[0].Name + "\"><img src=\"" + Imagesadw[0].ImagesMobile + "\" alt=\"" + Imagesadw[0].Name + "\" style=\"max-width:100%;\" /> </a>";
+                    Chuoiimg.Append("<div id=\"adwfooter\"><div class=\"support\">");
+                    Chuoiimg.Append("<div class=\"leftSupport\">");
+                    Chuoiimg.Append("<p><i class=\"fa fa-comments-o\" aria-hidden=\"true\"></i> Hỗ trợ khách hàng</p>");
+                    Chuoiimg.Append("<a href=\"tel:"+tblconfig.HotlineIN+ "\"> " + tblconfig.HotlineIN + "</a>");
+                    Chuoiimg.Append("<a href=\"tel:" + tblconfig.HotlineOUT + "\">" + tblconfig.HotlineOUT + "</a>");
+                    Chuoiimg.Append("</div>");
+                    Chuoiimg.Append("<div class=\"rightSupport\">");
+                    Chuoiimg.Append("<p><i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i> Thời gian làm việc</p>");
+                    Chuoiimg.Append("<span class=\"sp1\"> 7H đến 22H</span>");
+                    Chuoiimg.Append("<span class=\"sp2\"> Làm cả thứ 7 & Chủ nhật</span>");
+                    Chuoiimg.Append("</div>");
+                    Chuoiimg.Append("</div></div>");
 
                 }
-                else
-                {
-                    ViewBag.Chuoiimg = "<a href=\"" + Imagesadw[0].Url + "\" title=\"" + Imagesadw[0].Name + "\"><img src=\"" + Imagesadw[0].Images + "\" alt=\"" + Imagesadw[0].Name + "\" style=\"max-width:100%;\" /> </a>";
 
-                }
 
-            }
+                ViewBag.Chuoiimg = Chuoiimg.ToString();
+            //}
             //load danh sách địa chỉ
             var listGroupAddress = db.tblGroupAddresses.Where(p => p.Active == true).OrderBy(p => p.Ord).ToList();
             StringBuilder result = new StringBuilder();
@@ -166,7 +176,9 @@ namespace Thayloilocnuoc.Controllers.Display.Footer
                 baogia += "</li>";
             }
             ViewBag.baogia = baogia;
-            return PartialView(db.tblConfigs.First());
+
+
+            return PartialView(tblconfig);
         }
         public ActionResult CommandCall(string phone, string content)
         {

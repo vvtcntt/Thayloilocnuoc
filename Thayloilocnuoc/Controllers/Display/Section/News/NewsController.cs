@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using Thayloilocnuoc.Models;
 using PagedList;
 using PagedList.Mvc;
+using System.Text;
+
 namespace Thayloilocnuoc.Controllers.Display.Section.News
 {
     public class NewsController : Controller
@@ -44,7 +46,22 @@ namespace Thayloilocnuoc.Controllers.Display.Section.News
             meta += "<meta property=\"og:site_name\" content=\"http://thayloilocnuoc.com\" />";
             meta += "<meta property=\"og:description\" content=\"" + dblnew.Description + "\" />";
             meta += "<meta property=\"fb:admins\" content=\"\" />";
-            ViewBag.Meta = meta; 
+            ViewBag.Meta = meta;
+
+
+            StringBuilder schame = new StringBuilder();
+            schame.Append("<script type=\"application/ld+json\">");
+            schame.Append("{");
+            schame.Append("\"@context\": \"http://schema.org\",");
+            schame.Append("\"@type\": \"NewsArticle\",");
+            schame.Append("\"headline\": \"" + dblnew.Description + "\",");
+            schame.Append(" \"datePublished\": \"" + dblnew.DateCreate + "\",");
+            schame.Append("\"image\": [");
+            schame.Append(" \"" + dblnew.ImageLinkThumb + "\"");
+            schame.Append(" ]");
+            schame.Append("}");
+            schame.Append("</script> ");
+            ViewBag.schame = schame.ToString();
             int iduser = int.Parse(dblnew.idUser.ToString());
             ViewBag.User = db.tblUsers.First(p => p.id == iduser).UserName;
             int idcate = int.Parse(dblnew.idCate.ToString());
@@ -254,7 +271,19 @@ namespace Thayloilocnuoc.Controllers.Display.Section.News
             ViewBag.Keyword = "<meta name=\"keywords\" content=\"" + name + "\" /> ";
             ViewBag.favicon = " <link href=\"" + db.tblConfigs.First().Favicon + "\" rel=\"icon\" type=\"image/x-icon\" />";
             ViewBag.canonical = "<link rel=\"canonical\" href=\"http://Thayloilocnuoc.com/TagNews/" + StringClass.NameToTag(chuoitag) + "\" />"; ;
-
+            StringBuilder schame = new StringBuilder();
+            schame.Append("<script type=\"application/ld+json\">");
+            schame.Append("{");
+            schame.Append("\"@context\": \"http://schema.org\",");
+            schame.Append("\"@type\": \"NewsArticle\",");
+            schame.Append("\"headline\": \"" + name + "\",");
+            schame.Append(" \"datePublished\": \"\",");
+            schame.Append("\"image\": [");
+            schame.Append(" \"\"");
+            schame.Append(" ]");
+            schame.Append("}");
+            schame.Append("</script> ");
+            ViewBag.schame = schame.ToString();
             return View(listnews.ToPagedList(pageNumber, pageSize));
          }
         public PartialViewResult Boxfacebook()

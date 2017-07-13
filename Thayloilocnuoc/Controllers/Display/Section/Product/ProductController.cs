@@ -8,6 +8,8 @@ using PagedList;
 using PagedList.Mvc;
 using System.Globalization;
 using System.Data;
+using System.Text;
+
 namespace Thayloilocnuoc.Controllers.Display.Section.Product
 {
     public class ProductController : Controller
@@ -58,6 +60,36 @@ namespace Thayloilocnuoc.Controllers.Display.Section.Product
             ViewBag.Description = "<meta name=\"description\" content=\"" + MenuParent.Description + "\"/>";
             ViewBag.Keyword = "<meta name=\"keywords\" content=\"" + MenuParent.Keyword + "\" /> ";
             ViewBag.favicon = " <link href=\"" + MenuParent.Favicon + "\" rel=\"icon\" type=\"image/x-icon\" />";
+            string meta = "";
+            ViewBag.canonical = "<link rel=\"canonical\" href=\"http://Thayloilocnuoc.com/0/" + MenuParent.Tag + "\" />";
+            meta += "<meta itemprop=\"name\" content=\""+ MenuParent.Name+ "\" />";
+            meta += "<meta itemprop=\"url\" content=\"" + Request.Url.ToString() + "\" />";
+            meta += "<meta itemprop=\"description\" content=\"" + MenuParent.Description + "\" />";
+            meta += "<meta itemprop=\"image\" content=\"http://Thayloilocnuoc.com" + MenuParent.Images + "\" />";
+            meta += "<meta property=\"og:title\" content=\"" + MenuParent.Title + "\" />";
+            meta += "<meta property=\"og:type\" content=\"product\" />";
+            meta += "<meta property=\"og:url\" content=\"" + Request.Url.ToString() + "\" />";
+            meta += "<meta property=\"og:image\" content=\"http://Thayloilocnuoc.com" + MenuParent.Images + "\" />";
+            meta += "<meta property=\"og:site_name\" content=\"http://Thayloilocnuoc.com\" />";
+            meta += "<meta property=\"og:description\" content=\"" + MenuParent.Description + "\" />";
+            meta += "<meta property=\"fb:admins\" content=\"\" />";
+            ViewBag.Meta = meta;
+
+             StringBuilder schame = new StringBuilder();
+            schame.Append("<script type=\"application/ld+json\">");
+            schame.Append("{");
+            schame.Append("\"@context\": \"http://schema.org\",");
+            schame.Append("\"@type\": \"NewsArticle\",");
+            schame.Append("\"headline\": \""+MenuParent.Description+"\",");
+            schame.Append(" \"datePublished\": \"" + MenuParent.DateCreate + "\",");
+            schame.Append("\"image\": [");
+            schame.Append(" \"" + MenuParent.Images + "\"");
+            schame.Append(" ]");
+            schame.Append("}");
+            schame.Append("</script> ");
+            ViewBag.schame = schame.ToString();
+
+
 
             string chuoi = "";
             chuoi += "<div id=\"HeadShort\">";
@@ -339,6 +371,21 @@ namespace Thayloilocnuoc.Controllers.Display.Section.Product
             ViewBag.site_nameog = "<meta property=\"og:site_name\" content=\"" + ProductDetail.Name + "\"/> ";
             ViewBag.urlog = "<meta property=\"og:url\" content=\"" + Request.Url.ToString() + "\"/> ";
             ViewBag.descriptionog = "<meta property=\"og:description\" content=\"" + ProductDetail.Description + "\" />";
+
+             ViewBag.canonical = "<link rel=\"canonical\" href=\"http://Thayloilocnuoc.com/1/" + ProductDetail.Tag + "\" />";
+            StringBuilder schame = new StringBuilder();
+            schame.Append("<script type=\"application/ld+json\">");
+            schame.Append("{");
+            schame.Append("\"@context\": \"http://schema.org\",");
+            schame.Append("\"@type\": \"ProductArticle\",");
+            schame.Append("\"headline\": \"" + ProductDetail.Description + "\",");
+            schame.Append(" \"datePublished\": \"" + ProductDetail.DateCreate + "\",");
+            schame.Append("\"image\": [");
+            schame.Append(" \"" + ProductDetail.ImageLinkThumb + "\"");
+            schame.Append(" ]");
+            schame.Append("}");
+            schame.Append("</script> ");
+            ViewBag.schame = schame.ToString();
             int dodai = groupProduct.Level.Length / 5;
             string nUrl = "";
             for (int i = 0; i < dodai; i++)

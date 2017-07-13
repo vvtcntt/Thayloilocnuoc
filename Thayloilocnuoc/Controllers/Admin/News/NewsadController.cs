@@ -249,13 +249,24 @@ namespace Thayloilocnuoc.Controllers.Admin.Newsad
                 tblnew.DateCreate = DateTime.Now;
                 string idUser = Request.Cookies["Username"].Values["UserID"];
                 tblnew.idUser = int.Parse(idUser);
-                tblnew.Tag = StringClass.NameToTag(tblnew.Name);
+                string URL = collection["URL"];
+
+                if (URL == "on")
+                {
+                    tblnew.Tag = StringClass.NameToTag(tblnew.Name);
+                    clsSitemap.UpdateSitemap("3/" + StringClass.NameToTag(tblnew.Name), id.ToString(), "News");
+                }
+                else
+                {
+                    tblnew.Tag = collection["NameURL"]; 
+                    clsSitemap.UpdateSitemap("3/" + collection["NameURL"], id.ToString(), "News");
+                }
                 db.Entry(tblnew).State = EntityState.Modified;
                 db.SaveChanges();
                 #region[Updatehistory]
                 Updatehistoty.UpdateHistory("Edit new", Request.Cookies["Username"].Values["FullName"].ToString(), Request.Cookies["Username"].Values["UserID"].ToString());
                 #endregion
-                clsSitemap.UpdateSitemap("3/" + StringClass.NameToTag(tblnew.Name), id.ToString(),"News");
+             
                 return Redirect("Index?idCate=" + idCate);
             }
             return View(tblnew);

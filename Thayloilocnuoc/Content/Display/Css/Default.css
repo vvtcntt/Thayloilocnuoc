@@ -47,6 +47,8 @@ article{width:100%;height:auto;float:left;padding:0;margin:0}
 #Header #ContentHeader .Notes span{font-size:20px;color:#8ed6ff;text-align:center;text-transform:uppercase;margin:2px auto;font-family:UTMSwissCondensed;display:block}
 #Header #ContentHeader .sukhacbiet{font-size:23px;color:#c2e9ff;margin:25px auto 5px auto;text-align:center;display:block;font-family:UTMSwissCondensed}
 #Header #ContentHeader h1{color:#FFF;text-align:center;margin:10px 5px 10px 5px;display:block;font-family:UTMNokiaStandard;font-weight:normal;font-size:35px;font-weight:normal}
+#Header #ContentHeader h2{color:#FFF;text-align:center;margin:10px 5px 10px 5px;display:block;font-family:UTMNokiaStandard;font-weight:normal;font-size:35px;font-weight:normal}
+.h11{font-size:5px; color:#FFF; font-weight:normal; margin:0px}
 #Header #ContentHeader img{width:100%;height:100%;float:left;margin:0px}
 #Info{width:100%;height:auto;margin:0px auto;background:url(../iCon/bg_app_store.png) repeat left center scroll transparent}
 #Info #Info_Content{margin:0px auto;height:auto;width:1100px;padding:5px}
@@ -309,8 +311,9 @@ footer #Footer{width:100%;; padding-bottom:20px;height:auto;float:left;margin:0p
 #Content_Supports{width:1100px;height:auto;margin:3px auto}
 #Content_Supports #support_1{width:32%;height:auto;float:left;margin:0px 15px 0px 0px;}
 #Content_Supports .support_2{width:22%;height:auto;float:left;margin:10px 10px;}
-#Content_Supports .support_2 p{font-size:18px;color:#FFFFFF;font-family:"Roboto", sans-serif;font-weight:400;text-align:left;line-height:60px;margin:0px}
+#Content_Supports .support_2 p{font-size:18px;color:#FFFFFF;font-family:"Roboto", sans-serif;font-weight:400;text-align:left;margin:0px}
 #Content_Supports .support_2 p img{width:22px;height:22px;margin:-5px 7px}
+ #Content_Supports .support_2 a{color:#fbff95; margin:12px 0px;s display:block; font-size:18px}
 #Content_Supports .support_3{width:17%;height:auto;float:right;margin:10px 10px;}
 #Content_Supports .support_3 a{background:#CA7A01 none repeat scroll 0% 0%;font-size:18px;font-family:"Roboto",sans-serif;font-weight:300;height:60px;margin-top:0px;line-height:60px;color:#FFF;text-align:center;border-radius:3px;display:block}
 #Note{width:100%;background:url(../iCon/cloud-bg.jpg);height:100%;margin:5px 0px;float:left;background-attachment:fixed;position:relative;background-size:100%}
@@ -328,7 +331,7 @@ footer #Footer{width:100%;; padding-bottom:20px;height:auto;float:left;margin:0p
 #Left_Bottom_Note .Tear_Note .Name_Note span{font-size:25px;text-transform:uppercase;color:#FFF;line-height:50px;margin:0px 10px;display:block}
 #Left_Bottom_Note .Tear_Note .Des_Note{width:100%;height:auto;float:left;margin:0px}
 #Left_Bottom_Note .Tear_Note p{font-size:13px;color:#b1e1f2;font-style:italic;display:block;margin:2px 5px 10px 5px;text-align:justify}
-#Left_Bottom_Note .Tear_Note a{background:#42b914;margin:5px;padding:5px 10px;line-height:20px;display:block;color:#FFF;font-size:15px;width:270px;border-radius:5px;font-style:italic}
+#Left_Bottom_Note .Tear_Note a{background:#42b914;margin:5px;padding:5px 20px;line-height:20px;display:inline-block;color:#FFF;font-size:15px; border-radius:5px;font-style:italic}
 #Note .ghichu{font-family:Tahoma, Geneva, sans-serif;color:#FFF;font-size:14px;text-align:center;display:block;margin:10px 0px 20px 0px}
 #NewProduct{width:100%;height:auto;float:left;margin:20px 0px}
 #Content_NewProduct{width:1100px;height:auto;margin:0px auto}
@@ -378,10 +381,10 @@ footer #Footer{width:100%;; padding-bottom:20px;height:auto;float:left;margin:0p
                 height: auto;
                 float: left;
                 margin: 0px;
-                border-bottom: 1px solid #dddddd;
                 position: fixed;
-                bottom: 0px;
+                bottom: 0px; z-index:100000
             }
+ #adwfooter img{width:100%; height:auto; float:left; margin:0px; float:0px}	
 
             #Banner_footer {
                 bottom: 0px;
@@ -518,19 +521,19 @@ footer{width:100%; height:auto; float:left; margin:10px 0px 0px 0px}
 #Content_SupportFooter{width:1300px; height:auto;  margin:0px auto} 
 #Content_SupportFooter #Support{width:65%; height:100%; float:left; margin:0px}
 #Content_SupportFooter #Support .thacmac{float:left; margin:0px; line-height:50px; display:block; color: #fff;
-    font-family: 'hevr',Arial,Helvetica,sans-serif;
-    font-size: 20px; display:block; margin-right:20px}
+font-family: 'hevr',Arial,Helvetica,sans-serif;
+font-size: 20px; display:block; margin-right:20px}
 	
  	
 .Tear_Sp{width:auto; height:100%; float:left; margin:0px 10px 0px 5px; position:relative}
 #Call{width:170px; float:left; margin:5px 0px; float:left; position:relative; background:#fffadf; height:40px;    border-radius: 4px; cursor:pointer}
 #Call .icon{ width:41px; height:40px; position:absolute; right:-5px; top:-5px; content:''; background:url(../ICon/chat.png) no-repeat}
 #Call span{    color: #374b67;
-    font-size: 10.3px;
-    display: block; text-transform:uppercase; margin:7px 2px 0px 9px; display:block; font-weight:bold}
-	#Call small{    color: #a78a00;
-    font-size: 15px;
-     display: block; margin:0px 2px 2px 9px; font-weight:bold;    line-height: 17px;}
+font-size: 10.3px;
+display: block; text-transform:uppercase; margin:7px 2px 0px 9px; display:block; font-weight:bold}
+#Call small{    color: #a78a00;
+font-size: 15px;
+display: block; margin:0px 2px 2px 9px; font-weight:bold;    line-height: 17px;}
 .Tear_Sp:after{width:1px; height:40px; content:''; border-right:1px solid #0267c3; position:absolute; top:5px; right:0px}
 .Tear_Sp:last-child:after{ border:none}
 .Tear_Sp .Left_Tear_Sp{ background:url(../ICon/hotline_iCon.png) no-repeat left center scroll transparent; width:40px; height:50px; float:left; margin-right:10px}
@@ -555,6 +558,28 @@ footer{width:100%; height:auto; float:left; margin:10px 0px 0px 0px}
 0%{color:#81c3ff}
 50%{color:#fff}
 100%{color:#e4ff00}
+}
+
+
+@-webkit-keyframes dt {
+0%{color:#f80300}
+50%{color:#db9000}
+100%{color:#f80300}
+}
+@-moz-keyframes dt {
+0%{color:#F8CD0A}
+50%{color:#db9000}
+100%{color:#F8CD0A}
+}
+@-o-keyframes dt {
+0%{color:#f80300}
+50%{color:#db9000}
+100%{color:#f80300}
+}
+@keyframes dt {
+0%{color:#db9000}
+50%{color:#fff}
+100%{color:#e55c00}
 }
 .Tear_Sp .Right_Tear_Sp .sp2{ font-family:SwissCondensedBold; margin:4px 5px;   font-size:18px; display:block; line-height:13px;    font-weight: 700;
     -webkit-animation: st 700ms infinite;
@@ -640,7 +665,7 @@ footer{width:100%; height:auto; float:left; margin:10px 0px 0px 0px}
 #infomation #contentInfo ul.listLocation{width:100%; height:auto; float:left; margin:1px 0px 0px 0px; background:rgba(255,255,255,0.06)}
 #infomation #contentInfo ul.listLocation li{width:12.5%; float:left}
 #infomation #contentInfo ul.listLocation li a{color:#d3e6ff; font-size:16px; display:block; padding:10px; font-family:"Open Sans",sans-serif!important; position:relative; cursor:pointer}
-#infomation #contentInfo ul.listLocation li a.set:after {
+#infomation #contentInfo ul.listLocation li a.set:after{
 	position: absolute;
     top: 32px;
     left: 20px;
@@ -650,11 +675,23 @@ footer{width:100%; height:auto; float:left; margin:10px 0px 0px 0px}
     content: "";}
 .contentLocation{ width:100%; height:auto; float:left; margin:0px; background:rgba(255,255,255,0.1); display:none;    border-left: 1px solid #43546b;
     border-top: 1px solid #43546b; padding:5px 0px}
-.showLocation{display:block !important}
-
- 
+.showLocation{display:block !important} 
 .tearLoca .p1{ color:#ffa96a; margin:5px 8px; font-weight:bold; font-size:13px;font-family:"Open Sans",sans-serif!important; text-transform:uppercase}
 .tearLoca .p1 span{ color:#FFF; background:#ff2a00; padding:2px 5px 2px 2px ; display:inline-block; font-weight:normal; font-size:12px; text-transform:none}
 .tearLoca .p2{color:#FFF; font-size:12px; margin:5px 8px}
 .tearLoca a{color:#489eff; font-size:14px; display:block; margin:8px 8px}
 .tearLoca{width:20%; height:auto; float:left; margin:0px; border-right:1px solid #43546b; border-bottom:1px solid #43546b; padding:5px}
+.support{width:100%; height:auto; margin:0px; float:left; background:#3b88c8}
+.support .leftSupport{width:47%; height:100%; background: url(../iCon/hotline_iCon.png) no-repeat 5px 36px scroll #153f79; float:left; position:relative; padding-bottom:5px}
+.support .leftSupport:after{position:absolute; content:'';   
+border-bottom:70px solid transparent;
+border-top:0px solid transparent;
+border-left:40px solid #153f79; right:-40px; top:0px}
+.support .leftSupport p{font-size:15px; color:#b9efff; margin:4px 5px 8px 8px;font-family:"Open Sans",sans-serif!important; position:relative; padding-bottom:3px}
+.support .leftSupport p:before{ width:90%; height:1px; background:#093167; content:''; position:absolute; left:0px; bottom:0px}
+.support .leftSupport p:after{ width:90%; height:1px; background:#386198; content:''; position:absolute; left:0px; bottom:-1px}
+.support .leftSupport a{font-size:17px; color:#fff; margin:3px 5px 0px 37px; display:block; line-height:14px}
+.support .rightSupport{width:53%; height:auto; float:left; margin:0px}
+.support .rightSupport p{font-size:15px; color:#d9ffff; margin:4px 5px 2px 41px;font-family:"Open Sans",sans-serif!important; position:relative; padding-bottom:3px; text-align:right}
+.support .rightSupport .sp1{font-size:22px; display:block; margin:0px 5px 0px 20px; color:#FFF; text-align:right; font-weight:bold; line-height:20px}
+.support .rightSupport .sp2{font-size:13px; color:#feffd9; margin:2px 5px 2px 5px; text-align:right; display:block}

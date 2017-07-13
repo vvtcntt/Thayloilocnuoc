@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using Thayloilocnuoc.Models;
@@ -62,6 +63,34 @@ namespace Thayloilocnuoc.Controllers.Display.Section.Baogia
             ViewBag.Title = "<title>Bảng báo giá " + groupproduct.Name + " " + moth + "năm " + DateTime.Now.Year + " rẻ nhất HN</title>";
             ViewBag.Description = "<meta name=\"description\" content=\"Bảng báo giá " + groupproduct.Name + ", dịch vụ thay lõi lọc nước " + manufacture.Name + " tại nhà . " + tblcongif.Name + " là nhà phân phối chính thức Lõi máy lọc nước " + manufacture.Name + "  .\"/>";
             ViewBag.Keyword = "<meta name=\"keywords\" content=\"Bảng Báo giá sản phẩm "+groupproduct.Name+"\" /> ";
+            string meta = "";
+            ViewBag.canonical = "<link rel=\"canonical\" href=\"http://Thayloilocnuoc.com/bao-gia/" + groupproduct.Tag + "\" />";
+            meta += "<meta itemprop=\"name\" content=\"Bảng báo giá " + groupproduct.Name + " " + moth + "năm " + DateTime.Now.Year + " rẻ nhất HN\" />";
+            meta += "<meta itemprop=\"url\" content=\"" + Request.Url.ToString() + "\" />";
+            meta += "<meta itemprop=\"description\" content=\"Bảng báo giá " + groupproduct.Name + ", dịch vụ thay lõi lọc nước " + manufacture.Name + " tại nhà . " + tblcongif.Name + " là nhà phân phối chính thức Lõi máy lọc nước " + manufacture.Name + "\" />";
+            meta += "<meta itemprop=\"image\" content=\"http://Thayloilocnuoc.com" + groupproduct.Images + "\" />";
+            meta += "<meta property=\"og:title\" content=\"Bảng báo giá " + groupproduct.Name + " " + moth + "năm " + DateTime.Now.Year + " rẻ nhất HN\" />";
+            meta += "<meta property=\"og:type\" content=\"product\" />";
+            meta += "<meta property=\"og:url\" content=\"" + Request.Url.ToString() + "\" />";
+            meta += "<meta property=\"og:image\" content=\"http://Thayloilocnuoc.com" + groupproduct.Images + "\" />";
+            meta += "<meta property=\"og:site_name\" content=\"http://Thayloilocnuoc.com\" />";
+            meta += "<meta property=\"og:description\" content=\"" + groupproduct.Description + "\" />";
+            meta += "<meta property=\"fb:admins\" content=\"\" />";
+            ViewBag.Meta = meta;
+            StringBuilder schame = new StringBuilder();
+            schame.Append("<script type=\"application/ld+json\">");
+            schame.Append("{");
+            schame.Append("\"@context\": \"http://schema.org\",");
+            schame.Append("\"@type\": \"NewsArticle\",");
+            schame.Append("\"headline\": \""+ groupproduct.Name+ "\",");
+            schame.Append(" \"datePublished\": \""+groupproduct.DateCreate+"\",");
+            schame.Append("\"image\": [");
+            schame.Append(" \""+manufacture.Images.Remove(0,1)+"\"");
+            schame.Append(" ]");
+            schame.Append("}");
+            schame.Append("</script> ");
+
+            ViewBag.schame = schame.ToString();
             string chuoi = "";
             var listproduct = db.tblProducts.Where(p => p.Active == true && p.idCate == idmenu).OrderBy(p => p.Ord).ToList();
             for (int i = 0; i < listproduct.Count;i++ )
@@ -70,7 +99,11 @@ namespace Thayloilocnuoc.Controllers.Display.Section.Baogia
                 chuoi += "<tr>";
                 chuoi += "<td class=\"Ords\">" + (i + 1) + "</td>";
                 chuoi += "<td class=\"Names\">";
-                chuoi += "<a href=\"/1/" + listproduct[i].Tag + "\" title=\"" + listproduct[i].Name + "\">" + listproduct[i].Name + "</a></span>";
+                string note = "";
+                if(listproduct[i].Sale != null && listproduct[i].Sale != "")
+                    note = "<span>" + listproduct[i].Sale + "</span>";
+
+                chuoi += "<a href=\"/1/" + listproduct[i].Tag + "\" title=\"" + listproduct[i].Name + "\">" + listproduct[i].Name + " "+note+"</a></span>";
                 chuoi += "<span class=\"n2\">Chức năng : " + listproduct[i].Info + "</span>";
                 chuoi += "<span class=\"n3\">Chính hãng "+ manufacture.Name + " </span>";
                 chuoi += " </td>";

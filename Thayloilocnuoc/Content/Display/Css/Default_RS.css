@@ -161,7 +161,7 @@
 #Top_Note h3{font-size:25px}
 #Content_Supports #support_1{width:97%;margin:5px}
 #Content_Supports .support_2{width:47%;margin:2px}
-#Content_Supports .support_2 p{line-height:25px;text-align:center;font-size:10px}
+#Content_Supports .support_2 p{line-height:25px;text-align:center;font-size:15px}
 #Content_Supports .support_2 p img{width:17px;height:17px}
 .Tear_if{width:95%;margin:5px auto;float:none}
 #Info_Company #Logo{width:22%}
@@ -200,4 +200,6 @@
 #centerFooter{width:100%; text-align:center}
 #linkOut{display:none}
 #Content_Supports .support_2 p{color:#FFF !important}
+#footerbottom{ padding-bottom:80px}
+#Content_Supports .support_2 a{ text-align:center}
 }
