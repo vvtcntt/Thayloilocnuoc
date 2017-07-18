@@ -34,21 +34,15 @@ namespace Thayloilocnuoc.Controllers.Display.Footer
                 chuoi += "</div>";
             }
             ViewBag.chuoi = chuoi;
-            string chuoinew = "";
+            StringBuilder chuoinew = new StringBuilder();
             var listnew = db.tblNews.Where(p => p.Active == true && p.ViewHomes == true && p.idCate==9).OrderByDescending(p => p.DateCreate).Take(5).ToList();
             for (int i = 0; i < listnew.Count;i++ )
             {
-                int leght = listnew[i].Name.Length;
-                if(leght>35)
-                { 
-                chuoinew += " <li><h2><a href=\"/3/" + listnew[i].Tag + "\" title=\"" + listnew[i].Name + "\">" + listnew[i].Name.Substring(0,35) + " ...</a> </h2></li>";
-                }
-                else
-                {
-                    chuoinew += " <li><h2><a href=\"/3/" + listnew[i].Tag + "\" title=\"" + listnew[i].Name + "\">" + listnew[i].Name + "</a></h2> </li>";
-                }
+               
+                    chuoinew.Append(" <li><a href=\"/3/" + listnew[i].Tag + "\" title=\"" + listnew[i].Name + "\">" + listnew[i].Name + "</a> </li>");
+                
             }
-            ViewBag.chuoinew = chuoinew;
+            ViewBag.chuoinew = chuoinew.ToString();
             StringBuilder chuoisp =new StringBuilder();
             var listsp = db.tblProducts.Where(p => p.Active == true && p.ViewHomes == true).OrderByDescending(p => p.DateCreate).Take(5).ToList();
             for (int i = 0; i < listsp.Count;i++ )

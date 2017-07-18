@@ -491,7 +491,8 @@ footer{width:100%; height:auto; float:left; margin:10px 0px 0px 0px}
 #listInfo{width:100%; height:auto; float:left;    background: #435670;
     padding: 35px 0px;}
 #listInfo #contentListInfo{width:1300px; height:auto; margin:0px auto; clear:both}
-#listInfo #contentListInfo .tearInfo{width:24%; height:auto; float:left; margin:5px 0.5%; }
+#listInfo #contentListInfo .tearInfo{width:25%; height:auto; float:left; margin:5px 1%; }
+#listInfo #contentListInfo .tearInfo:first-child{width:17%}
 #listInfo #contentListInfo .tearInfo .name{   color: #f16725;
     font-size: 18px;
     margin-bottom: 15px;
@@ -698,3 +699,5 @@ border-left:40px solid #153f79; right:-40px; top:0px}
 .support .rightSupport p{font-size:15px; color:#d9ffff; margin:4px 5px 2px 41px;font-family:"Open Sans",sans-serif!important; position:relative; padding-bottom:3px; text-align:right}
 .support .rightSupport .sp1{font-size:22px; display:block; margin:0px 5px 0px 20px; color:#FFF; text-align:right; font-weight:bold; line-height:20px}
 .support .rightSupport .sp2{font-size:13px; color:#feffd9; margin:2px 5px 2px 5px; text-align:right; display:block}
+#SalePop{width:100%;  position:absolute; bottom:5px; left:0px; text-align:center }
+#SalePop span{ color:#F00; font-size:14px; line-height:22px; padding:4px 7px; text-align:center; display:inline-block; border:1px dashed #F00}
