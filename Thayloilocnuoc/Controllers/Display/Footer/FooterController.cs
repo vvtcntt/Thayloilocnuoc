@@ -49,13 +49,13 @@ namespace Thayloilocnuoc.Controllers.Display.Footer
                 }
             }
             ViewBag.chuoinew = chuoinew;
-            string chuoisp = "";
+            StringBuilder chuoisp =new StringBuilder();
             var listsp = db.tblProducts.Where(p => p.Active == true && p.ViewHomes == true).OrderByDescending(p => p.DateCreate).Take(5).ToList();
             for (int i = 0; i < listsp.Count;i++ )
             {
-                chuoisp += "<a href=\"/1/" + listsp[i].Tag + "\" title=\"" + listsp[i].Name + "\">› " + listsp[i].Name + "</a>";
+                chuoisp.Append("<li><a href=\"/1/" + listsp[i].Tag + "\" title=\"" + listsp[i].Name + "\">› " + listsp[i].Name + "</a></li>");
             }
-            ViewBag.chuoisp = chuoisp;
+            ViewBag.chuoisp = chuoisp.ToString();
 
             string menu = "";
             var listmenu = db.tblGroupProducts.Where(p => p.Active == true && p.Priority == true).OrderBy(p => p.Ord).Take(5).ToList();

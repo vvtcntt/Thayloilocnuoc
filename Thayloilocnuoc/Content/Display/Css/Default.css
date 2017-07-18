@@ -491,7 +491,7 @@ footer{width:100%; height:auto; float:left; margin:10px 0px 0px 0px}
 #listInfo{width:100%; height:auto; float:left;    background: #435670;
     padding: 35px 0px;}
 #listInfo #contentListInfo{width:1300px; height:auto; margin:0px auto; clear:both}
-#listInfo #contentListInfo .tearInfo{width:25%; height:auto; float:left; margin:5px 0px; }
+#listInfo #contentListInfo .tearInfo{width:24%; height:auto; float:left; margin:5px 0.5%; }
 #listInfo #contentListInfo .tearInfo .name{   color: #f16725;
     font-size: 18px;
     margin-bottom: 15px;
@@ -503,8 +503,11 @@ footer{width:100%; height:auto; float:left; margin:10px 0px 0px 0px}
     font-size: 14px;
     display: block;
     padding: 5px 0px;
+    text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
 }
-#listInfo #contentListInfo .tearInfo ul li h2{font-weight:normal; margin:0px}
+#listInfo #contentListInfo .tearInfo ul li h2{font-weight:normal; margin:4px 0px}
 #footerbottom{width:100%; height:auto; float:left; margin:0px; padding:10px 0px 37px 0px}
 #contentFooterbottom{width:1300px; height:auto; margin:0px auto; clear:both}
 #logoFooter{width:18%; height:auto; float:left}
