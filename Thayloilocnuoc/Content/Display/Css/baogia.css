@@ -33,7 +33,7 @@
 #Table .Names a span{ color:#F00;       -webkit-animation: dt 700ms infinite;
     -moz-animation: dt 700s infinite;
     -o-animation: dt 700ms infinite;
-    animation: dt 700ms infinite;}
+    animation: dt 700ms infinite; font-weight:normal}
 #Table .Names .n2{font-weight:normal;margin:3px 5px;display:block;font-style:italic}
 #Table .n3{color:#ff4f02; padding:3px 5px; display:inline-block; border:1px dashed #9d4017; margin:5px;font-size:11.2px; font-style:italic; font-weight:normal}
 #Table .n4{color:#3e3e3e; padding:3px 5px; display:inline-block; margin:5px;font-size:11.2px; font-style:italic; font-weight:normal}

@@ -701,3 +701,10 @@ border-left:40px solid #153f79; right:-40px; top:0px}
 .support .rightSupport .sp2{font-size:13px; color:#feffd9; margin:2px 5px 2px 5px; text-align:right; display:block}
 #SalePop{width:100%;  position:absolute; bottom:5px; left:0px; text-align:center }
 #SalePop span{ color:#F00; font-size:14px; line-height:22px; padding:4px 7px; text-align:center; display:inline-block; border:1px dashed #F00}
+
+#table1 td {
+    text-indent: 10px;
+    border:none !important
+}
+#table1 tr td:last-child{ padding-left:30px !important}
+#table1{ border:none !important}

@@ -101,17 +101,14 @@ namespace Thayloilocnuoc.Controllers.Display.Section.Baogia
                 chuoi += "<td class=\"Names\">";
                 string note = "";
                 if(listproduct[i].Sale != null && listproduct[i].Sale != "")
-                    note = "<span>" + listproduct[i].Sale + "</span>";
+                    note = "<span>" + listproduct[i].Access + "</span>";
 
-                chuoi += "<a href=\"/1/" + listproduct[i].Tag + "\" title=\"" + listproduct[i].Name + "\">" + listproduct[i].Name + " "+note+"</a></span>";
+                chuoi += "<a href=\"/1/" + listproduct[i].Tag + "\" title=\"" + listproduct[i].Name + "\">" + listproduct[i].Name+ " "+ note+" </a>";
                 chuoi += "<span class=\"n2\">Chức năng : " + listproduct[i].Info + "</span>";
                 chuoi += "<span class=\"n3\">Chính hãng "+ manufacture.Name + " </span>";
                 chuoi += " </td>";
-                chuoi += "<td class=\"Codes\"><a href=\"/Tabs/" + listproduct[i].Code + "\" title=\"" + listproduct[i].Code + "\">" + listproduct[i].Code + "</a></td>";
-               
-                    chuoi += "<td class=\"Wans\"><a href=\"/1/" + listproduct[i].Tag + "\" title=\"" + listproduct[i].Name + "\"><img src=\"" + listproduct[i].ImageLinkThumb + "\" alt=\"" + listproduct[i].Name + "\" title=\"" + listproduct[i].Name + "\"/></a>" + listproduct[i].Time + "</td>";
-              
-
+                chuoi += "<td class=\"Codes\"><a href=\"/Tabs/" + listproduct[i].Code + "\" title=\"" + listproduct[i].Code + "\">" + listproduct[i].Code + "</a></td>";               
+                chuoi += "<td class=\"Wans\"><a href=\"/1/" + listproduct[i].Tag + "\" title=\"" + listproduct[i].Name + "\"><img src=\"" + listproduct[i].ImageLinkThumb + "\" alt=\"" + listproduct[i].Name + "\" title=\"" + listproduct[i].Name + "\"/></a>" + listproduct[i].Time + "</td>";             
                 chuoi += "<td class=\"Prices\">" + string.Format("{0:#,#}", listproduct[i].PriceSale) + "đ  <span class=\"n4\">Miễn phí vận chuyển và lắp đặt toàn quốc</span></td>";
                 //chuoi += "<td class=\"Qualitys\">01</td>";
                 //chuoi += "<td class=\"SumPrices\">" + string.Format("{0:#,#}", listproduct[i].PriceSale) + "đ</td>";
