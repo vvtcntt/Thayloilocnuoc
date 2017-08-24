@@ -313,7 +313,7 @@ footer #Footer{width:100%;; padding-bottom:20px;height:auto;float:left;margin:0p
 #Content_Supports .support_2{width:22%;height:auto;float:left;margin:10px 10px;}
 #Content_Supports .support_2 p{font-size:18px;color:#FFFFFF;font-family:"Roboto", sans-serif;font-weight:400;text-align:left;margin:0px}
 #Content_Supports .support_2 p img{width:22px;height:22px;margin:-5px 7px}
- #Content_Supports .support_2 a{color:#fbff95; margin:12px 0px;s display:block; font-size:18px}
+ #Content_Supports .support_2 a{color:#fbff95; margin:5px 0px; text-align:center; display:block; font-size:18px}
 #Content_Supports .support_3{width:17%;height:auto;float:right;margin:10px 10px;}
 #Content_Supports .support_3 a{background:#CA7A01 none repeat scroll 0% 0%;font-size:18px;font-family:"Roboto",sans-serif;font-weight:300;height:60px;margin-top:0px;line-height:60px;color:#FFF;text-align:center;border-radius:3px;display:block}
 #Note{width:100%;background:url(../iCon/cloud-bg.jpg);height:100%;margin:5px 0px;float:left;background-attachment:fixed;position:relative;background-size:100%}
@@ -382,7 +382,7 @@ footer #Footer{width:100%;; padding-bottom:20px;height:auto;float:left;margin:0p
                 float: left;
                 margin: 0px;
                 position: fixed;
-                bottom: 0px; z-index:100000
+                bottom: 0px;
             }
  #adwfooter img{width:100%; height:auto; float:left; margin:0px; float:0px}	
 
@@ -503,8 +503,7 @@ footer{width:100%; height:auto; float:left; margin:10px 0px 0px 0px}
 #listInfo #contentListInfo .tearInfo ul li a{    color: #fff;
     font-size: 14px;
     display: block;
-    padding: 5px 0px;
-    text-overflow: ellipsis;
+    padding: 5px 0px;text-overflow: ellipsis;
 white-space: nowrap;
 overflow: hidden;
 }
@@ -525,19 +524,19 @@ overflow: hidden;
 #Content_SupportFooter{width:1300px; height:auto;  margin:0px auto} 
 #Content_SupportFooter #Support{width:65%; height:100%; float:left; margin:0px}
 #Content_SupportFooter #Support .thacmac{float:left; margin:0px; line-height:50px; display:block; color: #fff;
-font-family: 'hevr',Arial,Helvetica,sans-serif;
-font-size: 20px; display:block; margin-right:20px}
+    font-family: 'hevr',Arial,Helvetica,sans-serif;
+    font-size: 20px; display:block; margin-right:20px}
 	
  	
 .Tear_Sp{width:auto; height:100%; float:left; margin:0px 10px 0px 5px; position:relative}
 #Call{width:170px; float:left; margin:5px 0px; float:left; position:relative; background:#fffadf; height:40px;    border-radius: 4px; cursor:pointer}
 #Call .icon{ width:41px; height:40px; position:absolute; right:-5px; top:-5px; content:''; background:url(../ICon/chat.png) no-repeat}
 #Call span{    color: #374b67;
-font-size: 10.3px;
-display: block; text-transform:uppercase; margin:7px 2px 0px 9px; display:block; font-weight:bold}
-#Call small{    color: #a78a00;
-font-size: 15px;
-display: block; margin:0px 2px 2px 9px; font-weight:bold;    line-height: 17px;}
+    font-size: 10.3px;
+    display: block; text-transform:uppercase; margin:7px 2px 0px 9px; display:block; font-weight:bold}
+	#Call small{    color: #a78a00;
+    font-size: 15px;
+     display: block; margin:0px 2px 2px 9px; font-weight:bold;    line-height: 17px;}
 .Tear_Sp:after{width:1px; height:40px; content:''; border-right:1px solid #0267c3; position:absolute; top:5px; right:0px}
 .Tear_Sp:last-child:after{ border:none}
 .Tear_Sp .Left_Tear_Sp{ background:url(../ICon/hotline_iCon.png) no-repeat left center scroll transparent; width:40px; height:50px; float:left; margin-right:10px}
@@ -669,7 +668,7 @@ display: block; margin:0px 2px 2px 9px; font-weight:bold;    line-height: 17px;}
 #infomation #contentInfo ul.listLocation{width:100%; height:auto; float:left; margin:1px 0px 0px 0px; background:rgba(255,255,255,0.06)}
 #infomation #contentInfo ul.listLocation li{width:12.5%; float:left}
 #infomation #contentInfo ul.listLocation li a{color:#d3e6ff; font-size:16px; display:block; padding:10px; font-family:"Open Sans",sans-serif!important; position:relative; cursor:pointer}
-#infomation #contentInfo ul.listLocation li a.set:after{
+#infomation #contentInfo ul.listLocation li a.set:after {
 	position: absolute;
     top: 32px;
     left: 20px;
@@ -679,7 +678,9 @@ display: block; margin:0px 2px 2px 9px; font-weight:bold;    line-height: 17px;}
     content: "";}
 .contentLocation{ width:100%; height:auto; float:left; margin:0px; background:rgba(255,255,255,0.1); display:none;    border-left: 1px solid #43546b;
     border-top: 1px solid #43546b; padding:5px 0px}
-.showLocation{display:block !important} 
+.showLocation{display:block !important}
+
+ 
 .tearLoca .p1{ color:#ffa96a; margin:5px 8px; font-weight:bold; font-size:13px;font-family:"Open Sans",sans-serif!important; text-transform:uppercase}
 .tearLoca .p1 span{ color:#FFF; background:#ff2a00; padding:2px 5px 2px 2px ; display:inline-block; font-weight:normal; font-size:12px; text-transform:none}
 .tearLoca .p2{color:#FFF; font-size:12px; margin:5px 8px}
@@ -696,15 +697,13 @@ border-left:40px solid #153f79; right:-40px; top:0px}
 .support .leftSupport p:after{ width:90%; height:1px; background:#386198; content:''; position:absolute; left:0px; bottom:-1px}
 .support .leftSupport a{font-size:17px; color:#fff; margin:3px 5px 0px 37px; display:block; line-height:14px}
 .support .rightSupport{width:53%; height:auto; float:left; margin:0px}
-.support .rightSupport p{font-size:15px; color:#d9ffff; margin:4px 5px 2px 41px;font-family:"Open Sans",sans-serif!important; position:relative; padding-bottom:3px; text-align:right}
+.support .rightSupport p{font-size:15px; color:#d9ffff; margin:4px 5px 2px 41px;font-family:"Open Sans",sans-serif!important; position:relative; padding-bottom:3px}
 .support .rightSupport .sp1{font-size:22px; display:block; margin:0px 5px 0px 20px; color:#FFF; text-align:right; font-weight:bold; line-height:20px}
 .support .rightSupport .sp2{font-size:13px; color:#feffd9; margin:2px 5px 2px 5px; text-align:right; display:block}
-#SalePop{width:100%;  position:absolute; bottom:5px; left:0px; text-align:center }
-#SalePop span{ color:#F00; font-size:14px; line-height:22px; padding:4px 7px; text-align:center; display:inline-block; border:1px dashed #F00}
 
 #table1 td {
     text-indent: 10px;
-    border:none !important
-}
-#table1 tr td:last-child{ padding-left:30px !important}
-#table1{ border:none !important}
+    border: 1px solid #fff !important; 
+}.people{font-size:12px; margin:5px; text-align:center; display:inline-block; border:1px dashed #afafaf;padding: 2px 6px; }
+#chinhsach{width:100%; height:auto; text-align:center; float:left; margin:7px 0px 0px 0px; font-size:12px; color:#c7ddef; font-weight:bold; }
+#chinhsach a{ margin:5px; color:#c7ddef; display:inline-block; font-size:12px; font-weight:normal }

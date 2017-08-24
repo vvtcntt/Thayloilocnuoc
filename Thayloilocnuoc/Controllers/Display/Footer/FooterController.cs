@@ -43,6 +43,16 @@ namespace Thayloilocnuoc.Controllers.Display.Footer
                 
             }
             ViewBag.chuoinew = chuoinew.ToString();
+            ViewBag.chuoi = chuoi;
+            StringBuilder services = new StringBuilder();
+            var listServer = db.tblNews.Where(p => p.Active == true && p.ViewHomes == true && p.idCate ==8).OrderByDescending(p => p.DateCreate).Take(5).ToList();
+            for (int i = 0; i < listServer.Count; i++)
+            {
+
+                services.Append(" <li><a href=\"/3/" + listServer[i].Tag + "\" title=\"" + listServer[i].Name + "\">" + listServer[i].Name + "</a> </li>");
+
+            }
+            ViewBag.services = services.ToString();
             StringBuilder chuoisp =new StringBuilder();
             var listsp = db.tblProducts.Where(p => p.Active == true && p.ViewHomes == true).OrderByDescending(p => p.DateCreate).Take(5).ToList();
             for (int i = 0; i < listsp.Count;i++ )

@@ -9,9 +9,8 @@
 #Table .Name{width:71%;text-align:center}
 #Table .Code{width:19% !important;text-align:center; display:none}
 #Table .Wan{width:19%;text-align:center}
-#Table .Wans a {display:block}
-
-#Table .Wans img{max-width:100%; height:auto; float:left; margin:5px 0px}
+#Table .Wans a{display:block}
+#Table .Wans img{max-width:100%  !important; height:auto; float:left; margin:5px 0px}
 #Table .Price{width:10%;text-align:center}
 #Table .Quality{display:none}
 #Table .SumPrice{display:none}
@@ -24,7 +23,7 @@
 #Table .Codes{font-weight:bold;text-align:center; display:none}
 #Table .Codes a{margin:3px 5px;color:#424242}
 #Table .Prices{text-align:center; font-weight:bold}
-#Table .Ords{text-align:center; display:none}
+#Table .Ords{text-align:center;display:none}
 #Table .Qualitys{text-align:center;display:none}
 #Table .SumPrices{text-align:center;display:none}
  
