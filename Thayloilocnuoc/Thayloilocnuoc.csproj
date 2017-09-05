@@ -770,7 +770,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\ckeditor\" />
-    <Folder Include="Content\ckfinder\" />
+    <Folder Include="Content\ckfinder\bin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

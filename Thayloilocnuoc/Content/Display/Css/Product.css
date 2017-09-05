@@ -132,7 +132,7 @@
 .nVar_Content{width:100%;height:25px;float:left;border-bottom:1px solid #0993e3}
 .nVar_Content .Nvar{width:auto;height:100%;float:left;margin:0px;background:#0993e3}
 .nVar_Content .Nvar span{font-size:13px;color:#FFF;font-family:UTM_SwissCondensed;line-height:25px;margin:auto 7px;display:block;text-transform:uppercase}
-#LeftProduct_Content_Content{width:99%;height:auto;float:left;margin:10px 5px;font-size:14px;text-align:justify}
+#LeftProduct_Content_Content{width:99%;height:auto;float:left;margin:10px 5px;font-size:14px;text-align:justify; line-height:25px}
  table{width:100% !important}
 table tr{min-height:30px !important}
 #LeftProduct_Content_Content h3{display:block;font-size:15px !important;font-family:SwissCondensedBold;font-weight:normal;margin:15px auto;color:#545454;text-transform:uppercase;}
