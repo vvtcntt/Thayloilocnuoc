@@ -170,8 +170,6 @@ namespace Thayloilocnuoc.Controllers.Display.Section.Product
                 
  
             }
-
-            //chuoi += "</div>";
             ViewBag.chuoihienthi = chuoi;
             string nUrl = "";
             int dodai = MenuParent.Level.Length / 5;

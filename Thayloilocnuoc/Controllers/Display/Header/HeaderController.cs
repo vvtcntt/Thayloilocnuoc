@@ -30,7 +30,6 @@ namespace Thayloilocnuoc.Controllers.Display.Header
                 var listmenuchild = db.tblGroupProducts.Where(p => p.Active == true && p.Level.Substring(0, level.Length) == level && p.Level.Length == (level.Length + 5)).OrderBy(p => p.Ord).ToList();
                 if (listmenuchild.Count > 0)
                 {
-
                     chuoi += "<ul class=\"ul3\">";
                     for (int j = 0; j < listmenuchild.Count; j++)
                     {
